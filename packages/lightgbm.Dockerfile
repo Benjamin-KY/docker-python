@@ -20,7 +20,7 @@ RUN cd /usr/local/src && \
 
 # Using multi-stage builds to ensure the output image is very small
 # See: https://docs.docker.com/develop/develop-images/multistage-build/
-FROM alpine:latest
+FROM alpine:3.17.3
 
 RUN mkdir -p /tmp/whl/
 COPY --from=builder /usr/local/src/LightGBM/python-package/dist/*.whl /tmp/whl
